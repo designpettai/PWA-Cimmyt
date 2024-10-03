@@ -10,6 +10,10 @@ const HomePage = () => {
         navigate('/add-formar'); 
     };
 
+    const handleListClick = () => {
+        navigate('/formar-list'); 
+    };
+
     return (
         <div className="home-page">
             <div className="home-btm">
@@ -26,7 +30,7 @@ const HomePage = () => {
                         <div className="home-btm-btn">
                             <div className="button-group">
                                 <button className='primary' onClick={handleAddFarmerClick}>Add Farmer</button>
-                                <button className='secondary'>List of Farmers</button>
+                                <button className='secondary' onClick={handleListClick}>List of Farmers</button>
                             </div>
 
                         </div>
