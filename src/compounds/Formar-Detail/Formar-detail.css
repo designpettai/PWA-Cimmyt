@@ -1,0 +1,117 @@
+.formar-Detail {
+  padding: 10px 0 40px 0;
+}
+
+.formar-detail-1 {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #D1D5DB;
+  background:  #FFF;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+.formar-profile {
+  margin-right: 20px;
+  
+}
+
+.ash-icon {
+  color: #b2b2b2;
+}
+
+.contact-info h1 {
+  color: #111827;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.contact-info p {
+  color: #6B7280;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.land-Preparation h2 {
+  color: #111827;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+
+}
+
+.container-head {
+  margin-bottom: 20px;
+}
+
+.land-Preparation-do-does {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.land-Preparation-do,
+.land-Preparation-dont {
+  flex-basis: 50%;
+  padding: 10px;
+  margin-bottom: 40px;
+
+}
+
+.do {
+  border: 1px solid #217D00;
+  border-radius: 8px;
+  text-align: left;
+
+}
+
+.dont {
+  border: 1px solid #CB2D3E;
+  border-radius: 8px;
+  text-align: left;
+
+}
+
+.dont-heading,
+.do-heading {
+  padding: 15px 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.do-heading {
+  border-radius: 6px 6px 0px 0px;
+  background: linear-gradient(90deg, #217D00 -47.44%, #52C234 132.69%);
+}
+
+.dont-heading {
+  border-radius: 6px 6px 0px 0px;
+  background: linear-gradient(90deg, #CB2D3E -34.62%, #EF473A 99.41%);
+}
+
+.do-contenet,
+.dont-contenet {
+  padding: 10px;
+}
+
+.land-Preparation-do-does p {
+  color: #6B7280;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-bottom: 15px;
+}

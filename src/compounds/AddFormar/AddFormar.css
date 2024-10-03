@@ -1,0 +1,98 @@
+.add-formar {
+    padding: 40px 0;
+}
+
+.Add-form-Level {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.Add-form-Level-list {
+    width: 33.33%;
+    position: relative;
+}
+
+.Add-form-Level-list h2 {
+    padding: 10px;
+    border-radius: 50%;
+    width: 35%;
+    margin: 0 auto 10px;
+    color: #D1D5DB;
+    border: 1px solid #D1D5DB;
+    text-align: center;
+
+}
+
+.Add-form-Level-list.active h2 {
+    background-color: #279A82;
+    color: #fff;
+}
+
+.Add-form-Level-list:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    right: 67%;
+    top: 35%;
+    width: 66%;
+    border-bottom: 1px solid #D1D5DB;
+    z-index: -1;
+}
+
+.Add-form-Level-list:nth-child(2).active::after {
+    border-bottom: 1px solid #279A82;
+}
+
+.Add-form-Level-list:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    left: -32%;
+    top: 35%;
+    width: 65%;
+    border-bottom: 1px solid #D1D5DB;
+    z-index: -1;
+}
+
+.Add-form-Level-list:nth-child(3).active::before {
+    border-bottom: 1px solid #279A82;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 40px 0;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.form-detail h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    border-color: #279A82;
+    outline: none;
+}
