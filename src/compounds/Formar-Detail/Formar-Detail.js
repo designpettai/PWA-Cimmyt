@@ -2,19 +2,30 @@ import React from "react";
 import './Formar-detail.css';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const FormarDetail = () => {
     const navigate = useNavigate();
 
     const handleAddClick = () => {
-        navigate('/add-formar'); 
+        navigate('/add-formar');
     };
 
     const handleListClick = () => {
-        navigate('/formar-list'); 
+        navigate('/formar-list');
     };
+    const handleBack = () => {
+        navigate(-1);
+    };
+
     return (
         <section className="formar-Detail">
             <div className="container">
+                <h2 className="container-head">
+                    <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+                    Formar Detail
+                </h2>
+
                 <div className="formar-detail-1">
                     <div className="formar-profile">
                         <i className="fas fa-user-circle fa-3x ash-icon"></i>

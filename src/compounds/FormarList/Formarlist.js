@@ -6,11 +6,20 @@ const FarmerList = () => {
   const navigate = useNavigate();
 
   const handleAddClick = () => {
-    navigate('/add-formar'); 
+    navigate('/add-formar');
   };
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+  
   return (
     <section className="formar-Detail">
       <div className="container">
+        <h2 className="container-head">
+          <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+          Formar Detail
+        </h2>
         <h2 className="formar-dez">List of Farmers</h2>
         <div className="search-engine">
           <div className="input-with-icon input-with-icon-right">

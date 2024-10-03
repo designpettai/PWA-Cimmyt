@@ -4,7 +4,6 @@ import './AddFormar.css';
 
 const AddFormar = () => {
     const [currentActiveIndex, setCurrentActiveIndex] = useState(0);
-    const [isExtensionOfficer, setIsExtensionOfficer] = useState(false);
     const navigate = useNavigate();
 
     const handleContinue = () => {
@@ -18,12 +17,7 @@ const AddFormar = () => {
     };
 
     const handleYesClick = () => {
-        setIsExtensionOfficer(true);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate('/formar-detail');
+        navigate('/extension-officer');
     };
 
     return (
@@ -45,7 +39,7 @@ const AddFormar = () => {
                 </ol>
 
                 <div className="form-container">
-                    {currentActiveIndex === 0 && !isExtensionOfficer && (
+                    {currentActiveIndex === 0 && (
                         <div className="form-detail">
                             <h1>Farmer Details</h1>
                             <form id="farmer-form">
@@ -62,7 +56,7 @@ const AddFormar = () => {
                         </div>
                     )}
 
-                    {currentActiveIndex === 1 && !isExtensionOfficer && (
+                    {currentActiveIndex === 1 && (
                         <div className="form-detail">
                             <h1>Farm Details</h1>
                             <form id="farm-details-form">
@@ -88,7 +82,7 @@ const AddFormar = () => {
                         </div>
                     )}
 
-                    {currentActiveIndex === 2 && !isExtensionOfficer && (
+                    {currentActiveIndex === 2 && (
                         <div className="form-detail">
                             <h1>Extension Officer Details</h1>
                             <form id="extension-officer-form">
@@ -110,25 +104,8 @@ const AddFormar = () => {
                                             No
                                         </button>
                                     </div>
+                                    <input type="hidden" name="extension-officer" id="extension-officer" required />
                                 </div>
-                            </form>
-                        </div>
-                    )}
-
-                    {isExtensionOfficer && (
-                        <div className="form-detail">
-                            <h1>Extension Officer Details</h1>
-                            <form id="extension-officer-form" onSubmit={handleSubmit}>
-                                <div className="form-group">
-                                    <label htmlFor="officer-name">Your Name</label>
-                                    <input type="text" id="officer-name" placeholder="Enter your name here" />
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="officer-id">Your ID</label>
-                                    <input type="text" id="officer-id" placeholder="Enter your officer ID"  />
-                                </div>
-                                
-                                <button type="submit" className="primary">Submit</button>
                             </form>
                         </div>
                     )}
