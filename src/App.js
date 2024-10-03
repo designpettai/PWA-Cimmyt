@@ -10,7 +10,7 @@ import FormarList from './compounds/FormarList/Formarlist';
 
 const App = () => { 
     return (
-        <Router>
+        <Router basename="/PWA-CIMMYT"> {/* Update with your repo name */}
             <div>
                 <Header />
                 <Routes>
@@ -18,6 +18,7 @@ const App = () => {
                     <Route path="/add-formar" element={<AddFormar />} />
                     <Route path="/formar-detail" element={<FormarDetail />} />
                     <Route path="/formar-list" element={<FormarList />} /> 
+                    <Route path="*" element={<HomePage />} /> {/* Redirect to home for unknown routes */}
                 </Routes>
             </div>
         </Router>
