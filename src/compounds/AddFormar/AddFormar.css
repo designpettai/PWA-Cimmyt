@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
-    padding: 0 0 25px 0;
+    padding: 0 0 24px 0;
     border-bottom: 1px solid #D1D5DB;
 }
 
@@ -86,7 +86,7 @@
     font-style: normal;
     font-weight: 800;
     line-height: 28px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
 }
 
 .ex-select {
@@ -121,8 +121,17 @@ label {
     background: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     width: 100%;
-    margin-bottom: 35px;
+    margin-bottom: 16px;
 }
+
+input::placeholder {
+    font-size: 12px;
+}
+
+textarea::placeholder {
+    font-size: 12px;
+}
+
 
 .add-formar input[type="text"]:focus,
 .add-formar input[type="tel"]:focus,
@@ -136,7 +145,54 @@ select.input-error {
     border: 1px solid #f4a9a3;
 }
 
-.add-formar input.input-error::placeholder,
-.add-formar select.input-error::placeholder {
-    color: #f4a9a3;
+
+.child2 {
+    margin-bottom: 24px;
+}
+
+.Para-list {
+    color: #374151;
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+
+.select-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-container select {
+    padding-right: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: none;
+}
+
+.arrow-icons {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.error {
+    color: rgb(249, 73, 73);
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.error-icon {
+    margin-right: 4px;
 }

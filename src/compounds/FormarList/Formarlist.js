@@ -12,7 +12,7 @@ const FarmerList = () => {
   const handleBack = () => {
     navigate(-1);
   };
-  
+
   return (
     <section className="formar-Detail">
       <div className="container">

@@ -64,7 +64,7 @@ const AddFormar = () => {
             setErrors(newErrors);
         }
     };
-    
+
     return (
         <div className="add-formar">
             <div className="container">
@@ -77,11 +77,10 @@ const AddFormar = () => {
                             }}>
                                 {index + 1}
                             </h2>
-                            <p>{index === 0 ? 'Personal Details' : index === 1 ? 'Farm Details' : 'My Details'}</p>
+                            <p className='Para-list'>{index === 0 ? 'Personal Details' : index === 1 ? 'Farm Details' : 'My Details'}</p>
                         </li>
                     ))}
                 </ol>
-
 
                 <div className="form-container">
                     {currentActiveIndex === 0 && !isExtensionOfficer && (
@@ -93,22 +92,34 @@ const AddFormar = () => {
                                     <input
                                         type="text"
                                         id="farmer-name"
-                                        placeholder={errors.name || "Enter farmer name"}
+                                        placeholder="Enter farmer name"
                                         className={errors.name ? "input-error" : ""}
                                         required
                                     />
+                                    {errors.name && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.name}
+                                        </p>
+                                    )}
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group child2">
                                     <label htmlFor="farmer-mobile">Mobile Number of the Farmer</label>
                                     <input
                                         type="tel"
                                         id="farmer-mobile"
-                                        placeholder={errors.mobile || "Enter farmer mobile number"}
+                                        placeholder="Enter farmer mobile number"
                                         className={errors.mobile ? "input-error" : ""}
                                         required
                                     />
+                                    {errors.mobile && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.mobile}
+                                        </p>
+                                    )}
                                 </div>
-                                <button type="button" className="continue-btn" onClick={handleContinue}>Continue</button>
+                                <button type="button" className='primary' onClick={handleContinue}>Continue</button>
                             </form>
                         </div>
                     )}
@@ -119,24 +130,40 @@ const AddFormar = () => {
                             <form id="farm-details-form">
                                 <div className="form-group">
                                     <label htmlFor="agro-zone">Agro-climatic zone</label>
-                                    <select id="agro-zone" className={errors.agroZone ? "input-error" : ""} required>
-                                        <option value="" disabled selected>Select Agro-climatic zone</option>
-                                        <option value="Lakeshore">Lakeshore</option>
-                                        <option value="Mid-Altitude">Mid-Altitude</option>
-                                        <option value="High-Altitude">High-Altitude</option>
-                                    </select>
-                                    {errors.agroZone && <p className="error">{errors.agroZone}</p>}
+                                    <div className="select-container">
+                                        <select id="agro-zone" className={errors.agroZone ? "input-error" : ""} required>
+                                            <option value="" disabled>Select Agro-climatic zone</option>
+                                            <option value="Lakeshore">Lakeshore</option>
+                                            <option value="Mid-Altitude">Mid-Altitude</option>
+                                            <option value="High-Altitude">High-Altitude</option>
+                                        </select>
+                                        <i className="fas fa-chevron-down arrow-icons"></i>
+                                    </div>
+                                    {errors.agroZone && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.agroZone}
+                                        </p>
+                                    )}
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group child2">
                                     <label htmlFor="soil-texture">Soil texture</label>
-                                    <select id="soil-texture" className={errors.soilTexture ? "input-error" : ""} required>
-                                        <option value="" disabled selected>Select texture</option>
-                                        <option value="Sandy">Sandy</option>
-                                        <option value="Clayey">Clayey</option>
-                                    </select>
-                                    {errors.soilTexture && <p className="error">{errors.soilTexture}</p>}
+                                    <div className="select-container">
+                                        <select id="soil-texture" className={errors.soilTexture ? "input-error" : ""} required>
+                                            <option value="" disabled>Select texture</option>
+                                            <option value="Sandy">Sandy</option>
+                                            <option value="Clayey">Clayey</option>
+                                        </select>
+                                        <i className="fas fa-chevron-down arrow-icons"></i>
+                                    </div>
+                                    {errors.soilTexture && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.soilTexture}
+                                        </p>
+                                    )}
                                 </div>
-                                <button type="button" className="continue-btn" onClick={handleContinue}>Continue</button>
+                                <button type="button" className='primary' onClick={handleContinue}>Continue</button>
                             </form>
                         </div>
                     )}
@@ -147,7 +174,7 @@ const AddFormar = () => {
                             <form id="extension-officer-form">
                                 <div className="form-group">
                                     <label className='ex-select'>Are you an Extension Officer?</label>
-                                    <div className="button-group">
+                                    <div className="button-group child2">
                                         <button type="button" className="primary" onClick={handleYesClick}>Yes</button>
                                         <button type="button" className="secondary" onClick={handleNoClick}>No</button>
                                     </div>
@@ -165,18 +192,30 @@ const AddFormar = () => {
                                     <input
                                         type="text"
                                         id="officer-name"
-                                        placeholder={errors.officerName || "Enter your name here"}
+                                        placeholder="Enter your name here"
                                         className={errors.officerName ? "input-error" : ""}
                                     />
+                                    {errors.officerName && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.officerName}
+                                        </p>
+                                    )}
                                 </div>
-                                <div className="form-group">
+                                <div className="form-group child2">
                                     <label htmlFor="officer-id">Your ID</label>
                                     <input
                                         type="text"
                                         id="officer-id"
-                                        placeholder={errors.officerId || "Enter your officer ID"}
+                                        placeholder="Enter your officer ID"
                                         className={errors.officerId ? "input-error" : ""}
                                     />
+                                    {errors.officerId && (
+                                        <p className="error">
+                                            <i className="fas fa-exclamation-circle error-icon"></i>
+                                            {errors.officerId}
+                                        </p>
+                                    )}
                                 </div>
                                 <button type="submit" className="primary">Submit</button>
                             </form>
