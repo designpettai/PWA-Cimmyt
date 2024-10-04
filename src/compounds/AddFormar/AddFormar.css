@@ -96,7 +96,7 @@
 
 label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     color: #374151;
     font-family: Inter;
     font-size: 14px;
@@ -118,7 +118,7 @@ label {
     background: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     width: 100%;
-    margin-bottom: 16px;
+    
 }
 
 input::placeholder {
@@ -139,11 +139,18 @@ textarea::placeholder {
 
 .add-formar input.input-error,
 select.input-error {
-    border: 1px solid #f4a9a3;
+    border: 1px solid #b3261e;
 }
 
+.add-formar input.input-error::placeholder,
+select.input-error::placeholder {
+    color:#b3261e;
+}
+.form-group:nth-child(1) {
+    margin-bottom: 16px;
+}
 
-.child2 {
+.form-group:nth-child(2) {
     margin-bottom: 24px;
 }
 
@@ -178,18 +185,36 @@ select.input-error {
     position: absolute;
     top: 50%;
     right: 10px;
-    transform: translateY(-100%);
+    transform: translateY(-50%);
     pointer-events: none;
 }
 
 .error {
-    color: rgb(249, 73, 73);
+    color: #b3261e;
     margin-bottom:16px;
     display: flex;
     align-items: center;
     font-size: 12px;
+    margin-top: 4px;
 }
 
 .error-icon {
     margin-right: 4px;
+}
+
+
+.select-container select {
+    color: #6B7280; 
+}
+
+.select-container select option {
+    color: #6B7280; 
+}
+
+.select-container select option:disabled {
+    color: #6B7280; 
+}
+
+.select-container select:focus {
+    color: #000; 
 }
