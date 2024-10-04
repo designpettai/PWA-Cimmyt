@@ -4,19 +4,25 @@
     display: inline-block;
     
   }
-  
-  .input-with-icon:first-child input {
+  .input-with-icon-left{
+    width: 70%;
+  }
+
+  .input-with-icon-right{
+    width: 30%;
+  }
+  /* .input-with-icon:first-child input {
     width: 180px;
   }
   
   .input-with-icon:last-child input {
     width: 250px;
-  }
+  } */
   
   .search-engine {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content:flex-start;
     gap: 10px;
   }
   
@@ -76,7 +82,7 @@
   }
   
   .no-formar-contenet {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     text-align: center;
   }

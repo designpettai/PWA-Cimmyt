@@ -17,13 +17,17 @@
 }
 
 .Add-form-Level-list h2 {
-    padding: 10px;
     border-radius: 50%;
     width: 35%;
     margin: 0 auto 10px;
     color: #D1D5DB;
     border: 1px solid #D1D5DB;
     text-align: center;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -33,7 +37,7 @@
 }
 
 .Add-form-Level-list.active h2.active {
-    
+
     color: #279A82;
 }
 
@@ -84,9 +88,11 @@
     line-height: 28px;
     margin-bottom: 40px;
 }
-.ex-select{
+
+.ex-select {
     margin-bottom: 30px;
 }
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -102,9 +108,10 @@ label {
     line-height: 20px;
 }
 
-input[type="text"],
-input[type="tel"],
-select {
+.add-formar input[type="text"],
+.add-formar input[type="tel"],
+.add-formar select {
+    height: 48px;
     display: flex;
     padding: 9px 13px;
     align-items: center;
@@ -117,21 +124,19 @@ select {
     margin-bottom: 35px;
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus,
-select:focus {
+.add-formar input[type="text"]:focus,
+.add-formar input[type="tel"]:focus,
+.add-formar select:focus {
     border-color: #279A82;
     outline: none;
 }
 
-
-/* Add this to your AddFormar.css */
-input.input-error,
+.add-formar input.input-error,
 select.input-error {
-    border: 1px solid #EF473A; /* Change border to red */
+    border: 1px solid #f4a9a3;
 }
 
-input.input-error::placeholder,
-select.input-error::placeholder {
-    color: #EF473A;
+.add-formar input.input-error::placeholder,
+.add-formar select.input-error::placeholder {
+    color: #f4a9a3;
 }

@@ -64,7 +64,7 @@ const AddFormar = () => {
             setErrors(newErrors);
         }
     };
-
+    
     return (
         <div className="add-formar">
             <div className="container">
@@ -73,7 +73,7 @@ const AddFormar = () => {
                         <li key={index} className={`Add-form-Level-list ${currentActiveIndex >= index ? 'active' : ''}`}>
                             <h2 style={{
                                 backgroundColor: formCompleted[index] ? '#279A82' : 'transparent',
-                                color: formCompleted[index] ? '#fff' : 'inherit',
+                                color: currentActiveIndex === index ? '#279A82' : (formCompleted[index] ? '#fff' : 'inherit'),
                             }}>
                                 {index + 1}
                             </h2>
@@ -81,6 +81,7 @@ const AddFormar = () => {
                         </li>
                     ))}
                 </ol>
+
 
                 <div className="form-container">
                     {currentActiveIndex === 0 && !isExtensionOfficer && (

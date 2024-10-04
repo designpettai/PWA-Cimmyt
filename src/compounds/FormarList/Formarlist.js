@@ -18,9 +18,8 @@ const FarmerList = () => {
       <div className="container">
         <h2 className="container-head">
           <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
-          Formar Detail
+          List of Farmers
         </h2>
-        <h2 className="formar-dez">List of Farmers</h2>
         <div className="search-engine">
           <div className="input-with-icon input-with-icon-right">
             <input type="text" placeholder="Location" />

@@ -13,13 +13,13 @@
 
 .logo-cnt {
     font-weight: bolder;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 12px;
     text-align: center;
     text-transform: capitalize;
     color: #003B49;
     letter-spacing: 1px;
     font-family: 'Alfa Slab One', sans-serif;
+    font-weight: lighter;
 }
 
 .home-page {
@@ -78,7 +78,6 @@
 
 .btm-pic img {
     width: 100%;
-    height: 500px;
     opacity: 0; 
     animation: fadeIn 1s forwards;
     animation-delay: 0.75s;
