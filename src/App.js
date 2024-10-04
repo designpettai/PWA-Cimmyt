@@ -10,7 +10,7 @@ import FormarList from './compounds/FormarList/Formarlist';
 
 const App = () => { 
     return (
-        <Router basename="/PWA-CIMMYT"> {/* Update with your repo name */}
+        <Router basename="/PWA-CIMMYT">
             <div>
                 <Header />
                 <Routes>

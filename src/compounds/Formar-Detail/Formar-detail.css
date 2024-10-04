@@ -4,9 +4,7 @@
 
 .formar-detail-1 {
   display: flex;
-  align-items: center;
   padding: 16px;
-  border-radius: 10px;
   margin-bottom: 24px;
   border-radius: 6px;
   border: 1px solid #D1D5DB;
@@ -45,7 +43,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 14px;
+  margin-bottom: 5px;
 }
 
 .contact-info p {
@@ -54,7 +53,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 14px;
+  margin-bottom: 5px;
 }
 
 .land-Preparation h2 {
