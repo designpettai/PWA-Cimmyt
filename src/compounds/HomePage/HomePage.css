@@ -32,26 +32,26 @@
 }
 
 .home-btm {
+    background-image: url('../../assets/Bg.png');
+    background-size: 100% 100%;
+    background-position: center;
+    height: 85vh;
     color: #003B49;
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-size: cover;
+    padding: 20vh 0;
 }
 
 .home-btm-cnt h2 {
-    font-size: 20px;
-    line-height: 1.5;
-    font-weight: 600;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto 25px;
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-    animation-delay: 0.5s;
+    color: #003B49;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 40px;
+    line-height: 38px;
 }
+
 .home-btm-btn .btn {
     opacity: 0;
     animation: fadeIn 1s forwards;

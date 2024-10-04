@@ -18,9 +18,6 @@ const HomePage = () => {
         <div className="home-page">
             <div className="home-btm">
                 <div className="container">
-                    <div className="btm-pic">
-                        <img src={Image} alt="AgroTutor logo" />
-                    </div>
                     <div className="home-btm-2">
                         <div className="home-btm-cnt">
                             <h2>

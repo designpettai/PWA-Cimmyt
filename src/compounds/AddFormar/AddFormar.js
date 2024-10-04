@@ -73,7 +73,7 @@ const AddFormar = () => {
                         <li key={index} className={`Add-form-Level-list ${currentActiveIndex >= index ? 'active' : ''}`}>
                             <h2 style={{
                                 backgroundColor: formCompleted[index] ? '#279A82' : 'transparent',
-                                color: currentActiveIndex === index ? '#279A82' : (formCompleted[index] ? '#fff' : 'inherit'),
+                                color: currentActiveIndex === index ? '#279A82' : (formCompleted[index] ? '#fff' : '#D1D5DB'),
                             }}>
                                 {index + 1}
                             </h2>
@@ -132,7 +132,7 @@ const AddFormar = () => {
                                     <label htmlFor="agro-zone">Agro-climatic zone</label>
                                     <div className="select-container">
                                         <select id="agro-zone" className={errors.agroZone ? "input-error" : ""} required>
-                                            <option value="" disabled>Select Agro-climatic zone</option>
+                                            <option value="">Select Agro-climatic zone</option>
                                             <option value="Lakeshore">Lakeshore</option>
                                             <option value="Mid-Altitude">Mid-Altitude</option>
                                             <option value="High-Altitude">High-Altitude</option>
@@ -147,8 +147,8 @@ const AddFormar = () => {
                                     )}
                                 </div>
                                 <div className="form-group child2">
-                                    <label htmlFor="soil-texture">Soil texture</label>
-                                    <div className="select-container">
+                                <label htmlFor="soil-texture">Soil texture</label>
+                                    <div className="select-container"> 
                                         <select id="soil-texture" className={errors.soilTexture ? "input-error" : ""} required>
                                             <option value="" disabled>Select texture</option>
                                             <option value="Sandy">Sandy</option>

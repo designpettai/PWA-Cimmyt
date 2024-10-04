@@ -93,9 +93,6 @@
     margin-bottom: 30px;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
 
 label {
     display: block;
@@ -187,7 +184,7 @@ select.input-error {
 
 .error {
     color: rgb(249, 73, 73);
-    margin-top: 4px;
+    margin-bottom:16px;
     display: flex;
     align-items: center;
     font-size: 12px;

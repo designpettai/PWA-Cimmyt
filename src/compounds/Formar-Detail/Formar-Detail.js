@@ -44,7 +44,10 @@ const FormarDetail = () => {
                         <div className="land-Preparation-do">
                             <div className="do">
                                 <div className="do-heading">
-                                    <h2>do</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-up thumbs"></i>
+                                        do
+                                    </h2>
                                 </div>
                                 <div className="do-contenet">
                                     <div className="do-item">
@@ -58,7 +61,10 @@ const FormarDetail = () => {
                         <div className="land-Preparation-dont">
                             <div className="dont">
                                 <div className="dont-heading">
-                                    <h2>dont</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-down thumbs"></i> dont
+                                    </h2>
+
                                 </div>
                                 <div className="dont-contenet">
                                     <div className="dont-item">
@@ -79,7 +85,10 @@ const FormarDetail = () => {
                         <div className="land-Preparation-do">
                             <div className="do">
                                 <div className="do-heading">
-                                    <h2>do</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-up thumbs"></i>
+                                        do
+                                    </h2>
                                 </div>
                                 <div className="do-contenet">
                                     <div className="do-item">
@@ -93,7 +102,9 @@ const FormarDetail = () => {
                         <div className="land-Preparation-dont">
                             <div className="dont">
                                 <div className="dont-heading">
-                                    <h2>dont</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-down thumbs"></i> dont
+                                    </h2>
                                 </div>
                                 <div className="dont-contenet">
                                     <div className="dont-item">
@@ -114,7 +125,10 @@ const FormarDetail = () => {
                         <div className="land-Preparation-do">
                             <div className="do">
                                 <div className="do-heading">
-                                    <h2>do</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-up thumbs"></i>
+                                        do
+                                    </h2>
                                 </div>
                                 <div className="do-contenet">
                                     <div className="do-item">
@@ -129,7 +143,9 @@ const FormarDetail = () => {
                         <div className="land-Preparation-dont">
                             <div className="dont">
                                 <div className="dont-heading">
-                                    <h2>dont</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-down thumbs"></i> dont
+                                    </h2>
                                 </div>
                                 <div className="dont-contenet">
                                     <div className="dont-item">
@@ -150,7 +166,10 @@ const FormarDetail = () => {
                         <div className="land-Preparation-do">
                             <div className="do">
                                 <div className="do-heading">
-                                    <h2>do</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-up thumbs"></i>
+                                        do
+                                    </h2>
                                 </div>
                                 <div className="do-contenet">
                                     <div className="do-item">
@@ -162,7 +181,9 @@ const FormarDetail = () => {
                         <div className="land-Preparation-dont">
                             <div className="dont">
                                 <div className="dont-heading">
-                                    <h2>dont</h2>
+                                    <h2>
+                                        <i className="fas fa-thumbs-down thumbs"></i> dont
+                                    </h2>
                                 </div>
                                 <div className="dont-contenet">
                                     <div className="dont-item">
