@@ -1,4 +1,3 @@
-// AddFormar.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AddFormar.css';
@@ -6,6 +5,7 @@ import './AddFormar.css';
 const AddFormar = ({ onAddFarmer }) => {
     const [currentActiveIndex, setCurrentActiveIndex] = useState(0);
     const [isExtensionOfficer, setIsExtensionOfficer] = useState(false);
+    const [formData, setFormData] = useState({});
     const [formCompleted, setFormCompleted] = useState([false, false, false]);
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
@@ -17,8 +17,8 @@ const AddFormar = ({ onAddFarmer }) => {
         const validateOfficerId = (id) => /^\d+$/.test(id);
 
         if (currentActiveIndex === 0) {
-            const name = document.getElementById('farmer-name').value.trim();
-            const mobile = document.getElementById('farmer-mobile').value.trim();
+            const name = formData['farmer-name'] || '';
+            const mobile = formData['farmer-mobile'] || '';
 
             if (!name) {
                 newErrors.name = "Name is required";
@@ -32,8 +32,8 @@ const AddFormar = ({ onAddFarmer }) => {
                 newErrors.mobile = "Mobile number must be exactly 10 digits";
             }
         } else if (currentActiveIndex === 1) {
-            const agroZone = document.getElementById('agro-zone').value;
-            const soilTexture = document.getElementById('soil-texture').value;
+            const agroZone = formData['agro-zone'] || '';
+            const soilTexture = formData['soil-texture'] || '';
 
             if (!agroZone) {
                 newErrors.agroZone = "Agro-climatic zone is required";
@@ -42,11 +42,9 @@ const AddFormar = ({ onAddFarmer }) => {
             if (!soilTexture) {
                 newErrors.soilTexture = "Soil texture is required";
             }
-        } else if (currentActiveIndex === 2 && !isExtensionOfficer) {
-            // No validation needed for the Extension Officer question
-        } else if (isExtensionOfficer) {
-            const officerName = document.getElementById('officer-name').value.trim();
-            const officerId = document.getElementById('officer-id').value.trim();
+        } else if (currentActiveIndex === 2 && isExtensionOfficer) {
+            const officerName = formData['officer-name'] || '';
+            const officerId = formData['officer-id'] || '';
 
             if (!officerName) {
                 newErrors.officerName = "Your name is required";
@@ -79,28 +77,35 @@ const AddFormar = ({ onAddFarmer }) => {
         }
     };
 
+    const handleYesClick = () => {
+        setIsExtensionOfficer(true);
+    };
+
     const handleNoClick = () => {
+        // Submit the farmer data even when clicking "No"
+        const newErrors = validateForm();
+        if (Object.keys(newErrors).length === 0) {
+            onAddFarmer(formData);
+        }
         navigate('/formar-detail');
     };
 
-    const handleYesClick = () => {
-        setIsExtensionOfficer(true);
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [id]: value,
+        }));
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const newErrors = validateForm();
         if (Object.keys(newErrors).length === 0) {
+            onAddFarmer(formData);
             navigate('/formar-detail');
         } else {
             setErrors(newErrors);
-        }
-    };
-
-    const handleListClick = (index) => {
-        // Only allow navigation to the specific form if it is completed
-        if (formCompleted[index]) {
-            setCurrentActiveIndex(index);
         }
     };
 
@@ -112,11 +117,11 @@ const AddFormar = ({ onAddFarmer }) => {
                         <li
                             key={index}
                             className={`Add-form-Level-list ${currentActiveIndex >= index ? 'active' : ''}`}
-                            onClick={() => handleListClick(index)}
+                            onClick={() => formCompleted[index] && setCurrentActiveIndex(index)}
                         >
                             <h2
                                 style={{
-                                    backgroundColor: formCompleted[index] ? '#279A82' : 'transparent', 
+                                    backgroundColor: formCompleted[index] ? '#279A82' : 'transparent',
                                     color: formCompleted[index] ? '#fff' : (currentActiveIndex === index ? '#279A82' : '#D1D5DB'),
                                 }}
                             >
@@ -128,7 +133,6 @@ const AddFormar = ({ onAddFarmer }) => {
                         </li>
                     ))}
                 </ol>
-
 
                 <div className="form-container">
                     {currentActiveIndex === 0 && !isExtensionOfficer && (
@@ -142,14 +146,10 @@ const AddFormar = ({ onAddFarmer }) => {
                                         id="farmer-name"
                                         placeholder="Enter farmer name"
                                         className={errors.name ? "input-error" : ""}
+                                        onChange={handleInputChange}
                                         required
                                     />
-                                    {errors.name && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.name}
-                                        </p>
-                                    )}
+                                    {errors.name && <p className="error">{errors.name}</p>}
                                 </div>
                                 <div className="form-group child2">
                                     <label htmlFor="farmer-mobile">Mobile Number of the Farmer</label>
@@ -158,14 +158,10 @@ const AddFormar = ({ onAddFarmer }) => {
                                         id="farmer-mobile"
                                         placeholder="Enter farmer mobile number"
                                         className={errors.mobile ? "input-error" : ""}
+                                        onChange={handleInputChange}
                                         required
                                     />
-                                    {errors.mobile && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.mobile}
-                                        </p>
-                                    )}
+                                    {errors.mobile && <p className="error">{errors.mobile}</p>}
                                 </div>
                                 <button type="button" className='primary' onClick={handleContinue}>Continue</button>
                             </form>
@@ -179,45 +175,25 @@ const AddFormar = ({ onAddFarmer }) => {
                                 <div className="form-group">
                                     <label htmlFor="agro-zone">Agro-climatic zone</label>
                                     <div className="select-container">
-                                        <select id="agro-zone" className={errors.agroZone ? "input-error" : ""} required>
+                                        <select id="agro-zone" className={errors.agroZone ? "input-error" : ""} onChange={handleInputChange} required>
                                             <option value="">Select Agro-climatic zone</option>
                                             <option value="Lakeshore">Lakeshore</option>
                                             <option value="Mid-Altitude">Mid-Altitude</option>
                                             <option value="High-Altitude">High-Altitude</option>
                                         </select>
-                                        <svg className='arrow-icons' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <g id="Chevron down">
-                                                <path id="Icon" fillRule="evenodd" clipRule="evenodd" d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.7071 7.29289L9.99999 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68341 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z" fill="#6B7280" />
-                                            </g>
-                                        </svg>
                                     </div>
-                                    {errors.agroZone && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.agroZone}
-                                        </p>
-                                    )}
+                                    {errors.agroZone && <p className="error">{errors.agroZone}</p>}
                                 </div>
                                 <div className="form-group child2">
                                     <label htmlFor="soil-texture">Soil texture</label>
                                     <div className="select-container">
-                                        <select id="soil-texture" className={errors.soilTexture ? "input-error" : ""} required>
+                                        <select id="soil-texture" className={errors.soilTexture ? "input-error" : ""} onChange={handleInputChange} required>
                                             <option value="">Select soil texture</option>
                                             <option value="Sandy">Sandy</option>
                                             <option value="Clayey">Clayey</option>
                                         </select>
-                                        <svg className='arrow-icons' xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <g id="Chevron down">
-                                                <path id="Icon" fillRule="evenodd" clipRule="evenodd" d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.7071 7.29289L9.99999 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68341 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z" fill="#6B7280" />
-                                            </g>
-                                        </svg>
                                     </div>
-                                    {errors.soilTexture && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.soilTexture}
-                                        </p>
-                                    )}
+                                    {errors.soilTexture && <p className="error">{errors.soilTexture}</p>}
                                 </div>
                                 <button type="button" className='primary' onClick={handleContinue}>Continue</button>
                             </form>
@@ -250,13 +226,9 @@ const AddFormar = ({ onAddFarmer }) => {
                                         id="officer-name"
                                         placeholder="Enter your name here"
                                         className={errors.officerName ? "input-error" : ""}
+                                        onChange={handleInputChange}
                                     />
-                                    {errors.officerName && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.officerName}
-                                        </p>
-                                    )}
+                                    {errors.officerName && <p className="error">{errors.officerName}</p>}
                                 </div>
                                 <div className="form-group child2">
                                     <label htmlFor="officer-id">Your ID</label>
@@ -265,13 +237,9 @@ const AddFormar = ({ onAddFarmer }) => {
                                         id="officer-id"
                                         placeholder="Enter your officer ID"
                                         className={errors.officerId ? "input-error" : ""}
+                                        onChange={handleInputChange}
                                     />
-                                    {errors.officerId && (
-                                        <p className="error">
-                                            <i className="fas fa-exclamation-circle error-icon"></i>
-                                            {errors.officerId}
-                                        </p>
-                                    )}
+                                    {errors.officerId && <p className="error">{errors.officerId}</p>}
                                 </div>
                                 <button type="submit" className="primary">Submit</button>
                             </form>

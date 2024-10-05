@@ -36,8 +36,7 @@
     color: #279A82;
 }
 
-.Add-form-Level-list.active h2.active {
-
+.Add-form-Level-list.active p {
     color: #279A82;
 }
 
@@ -121,11 +120,11 @@ label {
     
 }
 
-input::placeholder {
+.add-formar input::placeholder {
     font-size: 12px;
 }
 
-textarea::placeholder {
+.add-formar textarea::placeholder {
     font-size: 12px;
 }
 
@@ -146,16 +145,16 @@ select.input-error {
 select.input-error::placeholder {
     color:#b3261e;
 }
-.form-group:nth-child(1) {
+.form-group{
     margin-bottom: 16px;
 }
 
-.form-group:nth-child(2) {
+.form-group.child2{
     margin-bottom: 24px;
 }
 
 .Para-list {
-    color: #374151;
+    color: #d1d5db;
     text-align: center;
     font-family: Inter;
     font-size: 12px;
