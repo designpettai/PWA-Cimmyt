@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useCallback } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './AddFormar.css';
 
 const AddFormar = ({ onAddFarmer }) => {
@@ -9,7 +9,8 @@ const AddFormar = ({ onAddFarmer }) => {
     const [formCompleted, setFormCompleted] = useState([false, false, false]);
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-
+    const location = useLocation();
+    const { farmers } = location.state || { farmers: [] };
     const validateForm = () => {
         const newErrors = {};
         const validateName = (name) => /^[a-zA-Z\s]+$/.test(name);
@@ -20,17 +21,26 @@ const AddFormar = ({ onAddFarmer }) => {
             const name = formData['farmer-name'] || '';
             const mobile = formData['farmer-mobile'] || '';
 
+            // Checking for existing name and mobile number
+            const isNameExists = farmers.some(farmer => farmer['farmer-name'] === name);
+            const isMobileExists = farmers.some(farmer => farmer['farmer-mobile'] === mobile);
+
             if (!name) {
                 newErrors.name = "Name is required";
             } else if (!validateName(name)) {
                 newErrors.name = "Name can only contain letters and spaces";
+            } else if (isNameExists) {
+                newErrors.name = "Name already exists";
             }
 
             if (!mobile) {
                 newErrors.mobile = "Mobile number is required";
             } else if (!validateMobile(mobile)) {
                 newErrors.mobile = "Mobile number must be exactly 10 digits";
+            } else if (isMobileExists) {
+                newErrors.mobile = "Mobile number already exists";
             }
+
         } else if (currentActiveIndex === 1) {
             const agroZone = formData['agro-zone'] || '';
             const soilTexture = formData['soil-texture'] || '';
@@ -60,6 +70,7 @@ const AddFormar = ({ onAddFarmer }) => {
         }
 
         return newErrors;
+
     };
 
     const handleContinue = () => {
@@ -82,13 +93,19 @@ const AddFormar = ({ onAddFarmer }) => {
     };
 
     const handleNoClick = () => {
-        // Submit the farmer data even when clicking "No"
         const newErrors = validateForm();
         if (Object.keys(newErrors).length === 0) {
             onAddFarmer(formData);
         }
         navigate('/formar-detail');
     };
+
+    const handleBack = useCallback(() => {
+        if (currentActiveIndex > 0) {
+            setCurrentActiveIndex(currentActiveIndex - 1);
+        }
+    }, [currentActiveIndex]);
+
 
     const handleInputChange = (e) => {
         const { id, value } = e.target;
@@ -137,7 +154,10 @@ const AddFormar = ({ onAddFarmer }) => {
                 <div className="form-container">
                     {currentActiveIndex === 0 && !isExtensionOfficer && (
                         <div className="form-detail">
-                            <h1>Farmer Details</h1>
+                            <h1 className="container-head">
+                                <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+                                Farmer Details
+                            </h1>
                             <form id="farmer-form">
                                 <div className="form-group">
                                     <label htmlFor="farmer-name">Name of the Farmer</label>
@@ -170,7 +190,11 @@ const AddFormar = ({ onAddFarmer }) => {
 
                     {currentActiveIndex === 1 && !isExtensionOfficer && (
                         <div className="form-detail">
-                            <h1>Farm Details</h1>
+                            <h1 className="container-head">
+                                <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+                                Farm Details
+                            </h1>
+
                             <form id="farm-details-form">
                                 <div className="form-group">
                                     <label htmlFor="agro-zone">Agro-climatic zone</label>
@@ -202,7 +226,10 @@ const AddFormar = ({ onAddFarmer }) => {
 
                     {currentActiveIndex === 2 && !isExtensionOfficer && (
                         <div className="form-detail">
-                            <h1>Extension Officer Details</h1>
+                            <h1 className="container-head">
+                                <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+                                Extension Officer Details
+                            </h1>
                             <form id="extension-officer-form">
                                 <div className="form-group">
                                     <label className='ex-select'>Are you an Extension Officer?</label>
@@ -217,7 +244,10 @@ const AddFormar = ({ onAddFarmer }) => {
 
                     {isExtensionOfficer && (
                         <div className="form-detail">
-                            <h1>Extension Officer Details</h1>
+                            <h1 className="container-head">
+                                <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
+                                Extension Officer Details
+                            </h1>
                             <form id="extension-officer-form" onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label htmlFor="officer-name">Your Name</label>

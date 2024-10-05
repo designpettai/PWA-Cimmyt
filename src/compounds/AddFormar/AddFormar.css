@@ -14,6 +14,10 @@
 .Add-form-Level-list {
     width: 33.33%;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .Add-form-Level-list h2 {
@@ -23,11 +27,12 @@
     color: #D1D5DB;
     border: 1px solid #D1D5DB;
     text-align: center;
-    height: 50px;
-    width: 50px;
+    height: 42px;
+    width: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
 
 }
 
@@ -45,9 +50,9 @@
 .Add-form-Level-list:nth-child(2)::after {
     content: "";
     position: absolute;
-    right: 67%;
-    top: 35%;
-    width: 66%;
+    right: 65%;
+    top: 28%;
+    width: 71%;
     border-bottom: 1px solid #D1D5DB;
     z-index: -1;
 }
@@ -59,9 +64,9 @@
 .Add-form-Level-list:nth-child(3)::before {
     content: "";
     position: absolute;
-    left: -32%;
-    top: 35%;
-    width: 65%;
+    left: -35%;
+    top: 28%;
+    width: 70%;
     border-bottom: 1px solid #D1D5DB;
     z-index: -1;
 }
@@ -117,7 +122,7 @@ label {
     background: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     width: 100%;
-    
+
 }
 
 .add-formar input::placeholder {
@@ -143,13 +148,14 @@ select.input-error {
 
 .add-formar input.input-error::placeholder,
 select.input-error::placeholder {
-    color:#b3261e;
+    color: #b3261e;
 }
-.form-group{
+
+.form-group {
     margin-bottom: 16px;
 }
 
-.form-group.child2{
+.form-group.child2 {
     margin-bottom: 24px;
 }
 
@@ -190,7 +196,7 @@ select.input-error::placeholder {
 
 .error {
     color: #b3261e;
-    margin-bottom:16px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     font-size: 12px;
@@ -203,17 +209,17 @@ select.input-error::placeholder {
 
 
 .select-container select {
-    color: #6B7280; 
+    color: #6B7280;
 }
 
 .select-container select option {
-    color: #6B7280; 
+    color: #6B7280;
 }
 
 .select-container select option:disabled {
-    color: #6B7280; 
+    color: #6B7280;
 }
 
 .select-container select:focus {
-    color: #000; 
+    color: #000;
 }

@@ -26,16 +26,24 @@ const FormarDetail = () => {
                     Formar Detail
                 </h2>
 
-                <div className="formar-detail-1">
-                    <div className="formar-profile">
-                        <i className="fas fa-user-circle fa-3x ash-icon"></i>
+                <div className="contact">
+                    <div className="avatar">
+                        S
                     </div>
-                    <div className="contact-info">
-                        <h1>Sathyan</h1>
-                        <p>Phone: +91 8790123111</p>
-                        <p>Location: Chennai</p>
+                    <div className="info">
+                        <div className="name">
+                            <h2>Sathyan</h2>
+                        </div>
+                        <div className="number">
+                            <h4>+91 8790123111</h4>
+                        </div>
+                    </div>
+                    <div className="location">
+                        <span>Chennai</span>
+                        <i className="fas fa-map-marker-alt"></i>
                     </div>
                 </div>
+
 
                 {/* Land Preparation Section */}
                 <div className="land-Preparation">
@@ -151,7 +159,7 @@ const FormarDetail = () => {
                     <h2 className="container-head">Nutrient Management</h2>
                     <div className="land-Preparation-do-does">
                         <div className="land-Preparation-do">
-                            <div className="do">
+                            <div style={{ height: '300px' }} className="do">
                                 <div className="do-heading">
                                     <h2>
                                         <svg className="thumbs" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -176,7 +184,7 @@ const FormarDetail = () => {
                             </div>
                         </div>
                         <div className="land-Preparation-dont">
-                            <div className="dont">
+                            <div style={{ height: '300px' }} className="dont">
                                 <div className="dont-heading">
                                     <h2>
                                         <svg className="thumbs" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
