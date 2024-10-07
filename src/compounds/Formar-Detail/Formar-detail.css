@@ -141,6 +141,13 @@
   margin-bottom: 12px;
 }
 
-.formar-Detail .contact {
+.farmer-detail-contact {
   margin-bottom: 24px;
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-radius: 6px;
 }

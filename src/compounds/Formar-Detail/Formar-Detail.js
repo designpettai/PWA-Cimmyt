@@ -57,7 +57,7 @@ const FarmerDetail = ({ farmers }) => {
                     Farmer Detail
                 </h2>
                 <div className="farmer-info">
-                    <div className="contact">
+                    <div className="farmer-detail-contact">
                         <div className="avatar" style={{ backgroundColor: bgColor }}>
                             {firstLetter}
                         </div>
