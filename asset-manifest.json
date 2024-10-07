@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PWA-Cimmyt/static/css/main.9e726300.css",
-    "main.js": "/PWA-Cimmyt/static/js/main.682a1fcf.js",
+    "main.css": "/PWA-Cimmyt/static/css/main.ed3f31b3.css",
+    "main.js": "/PWA-Cimmyt/static/js/main.47efc0b6.js",
     "static/js/453.35100383.chunk.js": "/PWA-Cimmyt/static/js/453.35100383.chunk.js",
     "static/media/fa-solid-900.ttf": "/PWA-Cimmyt/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
     "static/media/fa-brands-400.ttf": "/PWA-Cimmyt/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
@@ -14,12 +14,12 @@
     "static/media/fa-v4compatibility.ttf": "/PWA-Cimmyt/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
     "static/media/fa-v4compatibility.woff2": "/PWA-Cimmyt/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/PWA-Cimmyt/index.html",
-    "main.9e726300.css.map": "/PWA-Cimmyt/static/css/main.9e726300.css.map",
-    "main.682a1fcf.js.map": "/PWA-Cimmyt/static/js/main.682a1fcf.js.map",
+    "main.ed3f31b3.css.map": "/PWA-Cimmyt/static/css/main.ed3f31b3.css.map",
+    "main.47efc0b6.js.map": "/PWA-Cimmyt/static/js/main.47efc0b6.js.map",
     "453.35100383.chunk.js.map": "/PWA-Cimmyt/static/js/453.35100383.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e726300.css",
-    "static/js/main.682a1fcf.js"
+    "static/css/main.ed3f31b3.css",
+    "static/js/main.47efc0b6.js"
   ]
 }
