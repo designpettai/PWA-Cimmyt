@@ -10,6 +10,7 @@
   border: 1px solid #D1D5DB;
   background: #FFF;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  align-items: stretch;
 }
 
 .container-head {
@@ -20,6 +21,7 @@
   font-weight: 500;
   line-height: 28px;
   margin-bottom: 24PX;
+
 }
 
 .arrow-icon {
@@ -64,45 +66,29 @@
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-.container-head {
-  margin-bottom: 20px;
+.land-Preparation {
+  margin-bottom: 24px;
 }
 
 .land-Preparation-do-does {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .land-Preparation-do,
 .land-Preparation-dont {
-  flex-basis: 50%;
-  margin-bottom: 24px;
-}
-
-.land-Preparation-do {
-  padding-right: 5px;
-}
-
-.land-Preparation-dont {
-  padding-left: 5px;
-}
-
-.do,
-.dont {
   flex: 1;
   border-radius: 6px;
-  border: 1px solid#D1D5DB;
+  border: 1px solid #D1D5DB;
   background: #FFF;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
-  max-height: 250px;
 }
-
-
 
 .dont-heading,
 .do-heading {
@@ -153,4 +139,8 @@
   font-weight: 400;
   line-height: 16px;
   margin-bottom: 12px;
+}
+
+.formar-Detail .contact {
+  margin-bottom: 24px;
 }

@@ -39,7 +39,7 @@ html {
 }
 
 /* General Button Styles */
-button{
+button {
     color: #fff;
     font-size: 16px;
     font-weight: 500;
@@ -89,4 +89,3 @@ button.secondary:hover {
     justify-content: space-between;
     gap: 10px;
 }
-

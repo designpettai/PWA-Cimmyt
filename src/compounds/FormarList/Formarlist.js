@@ -16,12 +16,12 @@ const FarmerList = ({ farmers }) => {
         navigate(-1);
     };
 
-    const colorMapping = {
-        'A': '#009688', 'B': '#009688', 'C': '#009688', 'D': '#009688', 'E': '#009688', 'F': '#009688', 'G': '#009688', 
-        'H': '#FF5722', 'I': '#FF5722', 'J': '#FF5722', 'K': '#FF5722', 'L': '#FF5722', 'M': '#FF5722', 'N': '#3F51B5', 
-        'O': '#3F51B5', 'P': '#3F51B5', 'Q': '#3F51B5', 'R': '#E91E63', 'S': '#E91E63', 'T': '#E91E63', 'U': '#E91E63', 
-        'V': '#E91E63', 'W': '#E91E63', 'X': '#E91E63', 'Y': '#E91E63', 'Z': '#E91E63',
-    };
+    const colorMapping = {};
+    'ABCDEFG'.split('').forEach(letter => colorMapping[letter] = '#009688');
+    'HJKLMN'.split('').forEach(letter => colorMapping[letter] = '#FF5722');
+    'OPQR'.split('').forEach(letter => colorMapping[letter] = '#3F51B5');
+    'STUVWXYZ'.split('').forEach(letter => colorMapping[letter] = '#E91E63');
+
 
 
     const getColorForFirstLetter = (letter) => {
@@ -30,7 +30,6 @@ const FarmerList = ({ farmers }) => {
 
     // Filtering farmers based on search input
     const filteredFarmers = farmers.filter(farmer => {
-        const farmerName = farmer['farmer-name'] || '';
         const farmerMobile = farmer['farmer-mobile'] || '';
         const farmerLocation = farmer['farmer-location'] || '';
 

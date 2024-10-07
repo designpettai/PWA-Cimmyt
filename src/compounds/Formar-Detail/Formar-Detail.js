@@ -1,11 +1,21 @@
-import React from "react";
-import './Formar-detail.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import '../Formar-Detail/Formar-detail.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
-
-
-const FormarDetail = () => {
+const FarmerDetail = ({ farmers }) => {
     const navigate = useNavigate();
+    const { farmerId } = useParams();
+
+    const [farmerDetail, setFarmerDetail] = useState(null);
+
+    useEffect(() => {
+        const farmer = farmers.find(f => f['farmer-id'] === farmerId);
+        if (farmer) {
+            setFarmerDetail(farmer);
+        } else {
+            navigate('/farmer-list');
+        }
+    }, [farmerId, farmers, navigate]);
 
     const handleAddClick = () => {
         navigate('/add-formar');
@@ -14,36 +24,59 @@ const FormarDetail = () => {
     const handleListClick = () => {
         navigate('/formar-list');
     };
+
     const handleBack = () => {
         navigate(-1);
     };
 
+    if (!farmerDetail) {
+        return null;
+    }
+    const lastFarmerName = farmers.length > 0 ? farmers[farmers.length - 1]['farmer-name'] : ['farmer-name'];
+    const lastfarmerMobile = farmers.length > 0 ? farmers[farmers.length - 1]['farmer-mobile'] : ['farmer-mobile']
+
+    const farmerLocation = "Chennai";
+
+    const colorMapping = {};
+    'ABCDEFG'.split('').forEach(letter => colorMapping[letter] = '#009688');
+    'HJKLMN'.split('').forEach(letter => colorMapping[letter] = '#FF5722');
+    'OPQR'.split('').forEach(letter => colorMapping[letter] = '#3F51B5');
+    'STUVWXYZ'.split('').forEach(letter => colorMapping[letter] = '#E91E63');
+
+    const getColorForFirstLetter = (letter) => colorMapping[letter] || '#CCCCCC';
+    const firstLetter = lastFarmerName.charAt(0).toUpperCase();
+    const bgColor = getColorForFirstLetter(firstLetter);
+
+
+
     return (
-        <section className="formar-Detail">
+        <section className="farmer-detail">
             <div className="container">
                 <h2 className="container-head">
                     <i className="fas fa-angle-left arrow-icon" onClick={handleBack} style={{ cursor: 'pointer' }}></i>
-                    Formar Detail
+                    Farmer Detail
                 </h2>
+                <div className="farmer-info">
+                    <div className="contact">
+                        <div className="avatar" style={{ backgroundColor: bgColor }}>
+                            {firstLetter}
+                        </div>
+                        <div className="info">
+                            <div className="name">
+                                <h2>{lastFarmerName}</h2>
+                            </div>
+                            <div className="number">
+                                <h4>{lastfarmerMobile}</h4>
+                            </div>
+                        </div>
+                        <div className="location">
+                            <span>{farmerLocation}</span>
+                            <i className="fas fa-map-marker-alt"></i>
+                        </div>
+                    </div>
+                        
 
-                <div className="contact">
-                    <div className="avatar">
-                        S
-                    </div>
-                    <div className="info">
-                        <div className="name">
-                            <h2>Sathyan</h2>
-                        </div>
-                        <div className="number">
-                            <h4>+91 8790123111</h4>
-                        </div>
-                    </div>
-                    <div className="location">
-                        <span>Chennai</span>
-                        <i className="fas fa-map-marker-alt"></i>
-                    </div>
                 </div>
-
 
                 {/* Land Preparation Section */}
                 <div className="land-Preparation">
@@ -159,7 +192,7 @@ const FormarDetail = () => {
                     <h2 className="container-head">Nutrient Management</h2>
                     <div className="land-Preparation-do-does">
                         <div className="land-Preparation-do">
-                            <div style={{ height: '300px' }} className="do">
+                            <div className="do">
                                 <div className="do-heading">
                                     <h2>
                                         <svg className="thumbs" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -184,7 +217,7 @@ const FormarDetail = () => {
                             </div>
                         </div>
                         <div className="land-Preparation-dont">
-                            <div style={{ height: '300px' }} className="dont">
+                            <div className="dont">
                                 <div className="dont-heading">
                                     <h2>
                                         <svg className="thumbs" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -259,15 +292,14 @@ const FormarDetail = () => {
                     </div>
                 </div>
 
+
                 <div className="button-group">
-                    <button type="button" className="primary" onClick={handleAddClick}>AddFormar</button>
+                    <button type="button" className="primary" onClick={handleAddClick}>Add Farmer</button>
                     <button type="button" className="secondary" onClick={handleListClick}>See Farmers List</button>
                 </div>
-
             </div>
         </section>
     );
 };
 
-export default FormarDetail;
-
+export default FarmerDetail;
