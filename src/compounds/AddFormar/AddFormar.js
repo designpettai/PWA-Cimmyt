@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import './AddFormar.css';
 
 const AddFormar = ({ onAddFarmer }) => {
@@ -8,9 +8,9 @@ const AddFormar = ({ onAddFarmer }) => {
     const [formData, setFormData] = useState({});
     const [formCompleted, setFormCompleted] = useState([false, false, false]);
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
     const location = useLocation();
-    const { farmers } = location.state || { farmers: [] };
+    const { farmers } = location.state || { farmers: [] }; 
     const validateForm = () => {
         const newErrors = {};
         const validateName = (name) => /^[a-zA-Z\s]+$/.test(name);
@@ -20,11 +20,11 @@ const AddFormar = ({ onAddFarmer }) => {
         if (currentActiveIndex === 0) {
             const name = formData['farmer-name'] || '';
             const mobile = formData['farmer-mobile'] || '';
-
+    
             // Checking for existing name and mobile number
             const isNameExists = farmers.some(farmer => farmer['farmer-name'] === name);
             const isMobileExists = farmers.some(farmer => farmer['farmer-mobile'] === mobile);
-
+    
             if (!name) {
                 newErrors.name = "Name is required";
             } else if (!validateName(name)) {
@@ -32,7 +32,7 @@ const AddFormar = ({ onAddFarmer }) => {
             } else if (isNameExists) {
                 newErrors.name = "Name already exists";
             }
-
+    
             if (!mobile) {
                 newErrors.mobile = "Mobile number is required";
             } else if (!validateMobile(mobile)) {
@@ -40,37 +40,37 @@ const AddFormar = ({ onAddFarmer }) => {
             } else if (isMobileExists) {
                 newErrors.mobile = "Mobile number already exists";
             }
-
+    
         } else if (currentActiveIndex === 1) {
             const agroZone = formData['agro-zone'] || '';
             const soilTexture = formData['soil-texture'] || '';
-
+    
             if (!agroZone) {
                 newErrors.agroZone = "Agro-climatic zone is required";
             }
-
+    
             if (!soilTexture) {
                 newErrors.soilTexture = "Soil texture is required";
             }
         } else if (currentActiveIndex === 2 && isExtensionOfficer) {
             const officerName = formData['officer-name'] || '';
             const officerId = formData['officer-id'] || '';
-
+    
             if (!officerName) {
                 newErrors.officerName = "Your name is required";
             } else if (!validateName(officerName)) {
                 newErrors.officerName = "Name can only contain letters and spaces";
             }
-
+    
             if (!officerId) {
                 newErrors.officerId = "Your ID is required";
             } else if (!validateOfficerId(officerId)) {
                 newErrors.officerId = "Officer ID must be a number";
             }
         }
-
+    
         return newErrors;
-
+    
     };
 
     const handleContinue = () => {

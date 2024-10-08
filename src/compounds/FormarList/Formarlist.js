@@ -105,7 +105,7 @@ const FarmerList = ({ farmers }) => {
                                     <i className="fas fa-exclamation-triangle"></i>
                                 </div>
                                 <h4>No Farmers Found</h4>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <p>We couldn't find any farmers in this area at the moment. Please check again later or try searching with different criteria. We're constantly updating our listings to provide the most accurate and up-to-date results.</p>
                             </div>
                         </div>
                     )}
