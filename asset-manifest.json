@@ -1,28 +1,25 @@
 {
   "files": {
-    "main.css": "/PWA-Cimmyt/static/css/main.096ca90b.css",
-    "main.js": "/PWA-Cimmyt/static/js/main.ea07b1ef.js",
+    "main.css": "/PWA-Cimmyt/static/css/main.789c5c82.css",
+    "main.js": "/PWA-Cimmyt/static/js/main.41388c97.js",
     "static/js/453.35100383.chunk.js": "/PWA-Cimmyt/static/js/453.35100383.chunk.js",
-    "static/media/image.png": "/PWA-Cimmyt/static/media/image.9efa25b9da4fbdb4a614.png",
     "static/media/fa-solid-900.ttf": "/PWA-Cimmyt/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
-    "static/media/image-2.avif": "/PWA-Cimmyt/static/media/image-2.15b731b0d420f5f4babb.avif",
+    "static/media/BG.jpg": "/PWA-Cimmyt/static/media/BG.42d0ded29963be4d8b22.jpg",
     "static/media/fa-brands-400.ttf": "/PWA-Cimmyt/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
     "static/media/fa-solid-900.woff2": "/PWA-Cimmyt/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
-    "static/media/image-4.jpg": "/PWA-Cimmyt/static/media/image-4.46d81f06c0b5b2515a0f.jpg",
     "static/media/fa-brands-400.woff2": "/PWA-Cimmyt/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
     "static/media/fa-regular-400.ttf": "/PWA-Cimmyt/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
     "static/media/Logo.png": "/PWA-Cimmyt/static/media/Logo.03027f1d325f9b3d65ce.png",
     "static/media/fa-regular-400.woff2": "/PWA-Cimmyt/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
-    "static/media/image-3.avif": "/PWA-Cimmyt/static/media/image-3.4815217ddc90daec1f6d.avif",
     "static/media/fa-v4compatibility.ttf": "/PWA-Cimmyt/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
     "static/media/fa-v4compatibility.woff2": "/PWA-Cimmyt/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
     "index.html": "/PWA-Cimmyt/index.html",
-    "main.096ca90b.css.map": "/PWA-Cimmyt/static/css/main.096ca90b.css.map",
-    "main.ea07b1ef.js.map": "/PWA-Cimmyt/static/js/main.ea07b1ef.js.map",
+    "main.789c5c82.css.map": "/PWA-Cimmyt/static/css/main.789c5c82.css.map",
+    "main.41388c97.js.map": "/PWA-Cimmyt/static/js/main.41388c97.js.map",
     "453.35100383.chunk.js.map": "/PWA-Cimmyt/static/js/453.35100383.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.096ca90b.css",
-    "static/js/main.ea07b1ef.js"
+    "static/css/main.789c5c82.css",
+    "static/js/main.41388c97.js"
   ]
 }
