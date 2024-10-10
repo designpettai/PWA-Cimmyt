@@ -32,22 +32,26 @@
 }
 
 .home-btm {
+    background-image: url('../../assets/BG.jpg');
+    background-size: 100% 100%;
+    background-position: center;
     height: 85vh;
     color: #003B49;
-    align-items: center;
-    padding: 60px 0 0 0;
+    width: 450px;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
 .home-btm-cnt h2 {
-    color: #003B49;
     font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
+    font-size: 28px;
     font-weight: 800;
-    line-height: normal;
-    margin-bottom: 24px;
-    line-height: 30px;
-    text-align: center;
+    line-height: 38px;
+    text-align: left;
+    color: #FFFFFF;
+    margin-bottom: 32px;
+    width: 80%;
+
 }
 
 .home-btm-btn .btn {
