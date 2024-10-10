@@ -42,6 +42,12 @@
     padding: 50px 0;
 }
 
+@media (max-width: 768px) {
+    .home-btm {
+      width: 100%;
+    }
+  }
+  
 .home-btm-cnt h2 {
     font-family: Inter;
     font-size: 28px;
